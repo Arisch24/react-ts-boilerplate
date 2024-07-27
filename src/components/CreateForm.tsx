@@ -1,9 +1,9 @@
-import { FormEvent, useState } from 'react';
-import { TaskItemProps } from '../types/Todos';
-import { ACTIONS } from '../defaults';
+import { FormEvent, useState } from "react";
+import { TaskItemProps } from "../types/Todos";
+import { ACTIONS } from "../utils/defaults";
 
 const CreateForm = ({ dispatch }: TaskItemProps) => {
-	const [title, setTitle] = useState('');
+	const [title, setTitle] = useState("");
 
 	const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
 		e.preventDefault();

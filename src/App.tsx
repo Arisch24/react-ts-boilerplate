@@ -1,10 +1,10 @@
-import './App.css';
-import { useReducer } from 'react';
-import CreateForm from './components/CreateForm';
-import { TaskItemInterface } from './types/Todos';
-import TaskCard from './components/TaskCard';
-import { Divider } from '@mui/material';
-import { ACTIONS, defaultItems } from './defaults';
+import "./styles/App.css";
+import { useReducer } from "react";
+import CreateForm from "./components/CreateForm";
+import { TaskItemInterface } from "./types/Todos";
+import TaskCard from "./components/TaskCard";
+import { Divider } from "@mui/material";
+import { ACTIONS, defaultItems } from "./utils/defaults";
 
 const reducer = (tasks: any, action?: any) => {
 	const { type, payload } = action;
@@ -19,7 +19,7 @@ const reducer = (tasks: any, action?: any) => {
 			return { ...tasks, isCompleted: !tasks.isCompleted };
 		case ACTIONS.DELETE_TASK:
 			return tasks.filter(
-				(task: TaskItemInterface) => task.id !== payload.id,
+				(task: TaskItemInterface) => task.id !== payload.id
 			);
 		default:
 			return tasks;
@@ -41,7 +41,7 @@ function App() {
 						Task Manager
 					</h1>
 					<Divider
-						sx={{ background: 'white', margin: '1.5rem 0' }}
+						sx={{ background: "white", margin: "1.5rem 0" }}
 						aria-hidden="true"
 					/>
 				</div>

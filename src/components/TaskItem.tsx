@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { TaskItemInterface } from '../types/Todos';
-import CloseIcon from '@mui/icons-material/Close';
-import { ACTIONS } from '../defaults';
+import React, { useState } from "react";
+import { TaskItemInterface } from "../types/Todos";
+import CloseIcon from "@mui/icons-material/Close";
+import { ACTIONS } from "../utils/defaults";
 
 interface TaskItemProps {
 	task: TaskItemInterface;
