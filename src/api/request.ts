@@ -1,15 +1,15 @@
-import axios, { Method, AxiosResponse } from "axios";
+import axios, { Method } from "axios";
 
-useEffect(() => {
-	const controller = new AbortController();
-
-	fetch("https://jsonplaceholder.typicode.com/todos", {
-		signal: controller.signal,
-	})
-		.then((res) => res.json())
-		.then((data) => {
-			return data.body;
+const fetchData = async <T>(method: Method, url: string, params: any) => {
+	const response = await axios
+		.get<T>(url, {
+			method,
+			params,
+		})
+		.then((res) => {
+			return res.data;
 		});
+	return response;
+};
 
-	return () => controller.abort();
-}, []);
+export default fetchData;
