@@ -1,7 +1,11 @@
 import { TaskItemProps } from "../types/Todos";
 import TaskItem from "./TaskItem";
+import { useSelector } from "react-redux";
+import { RootState } from "../store/store";
 
-const TaskCard = ({ tasks, dispatch }: TaskItemProps) => {
+const TaskCard = ({ dispatch }: TaskItemProps) => {
+	const tasks = useSelector((state: RootState) => state.tasksReducer);
+
 	return (
 		<ul className="todo-list">
 			{tasks && tasks.length > 0 ? (

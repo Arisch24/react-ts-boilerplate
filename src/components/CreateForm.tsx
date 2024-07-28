@@ -11,6 +11,7 @@ const CreateForm = ({ dispatch }: TaskItemProps) => {
 		// add todo
 		if (title) {
 			dispatch(addTask(title));
+			setTitle("");
 		}
 	};
 

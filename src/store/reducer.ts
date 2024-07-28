@@ -11,7 +11,6 @@ const tasksReducer = (
 
 	switch (type) {
 		case ACTIONS.ADD_TASK:
-			console.log(state);
 			return [
 				...state,
 				{
