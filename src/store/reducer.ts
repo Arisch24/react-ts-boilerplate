@@ -1,7 +1,12 @@
+import { TaskItemInterface } from "../types/Todos";
 import defaultItems from "../utils/defaults";
 import ACTIONS from "./actions";
+import type { PayloadAction } from "@reduxjs/toolkit";
 
-const tasksReducer = (state = defaultItems, action: any) => {
+const tasksReducer = (
+	state = defaultItems,
+	action: PayloadAction<TaskItemInterface>
+) => {
 	const { type, payload } = action;
 
 	switch (type) {

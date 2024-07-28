@@ -2,11 +2,11 @@ import "./styles/App.css";
 import CreateForm from "./components/CreateForm";
 import TaskCard from "./components/TaskCard";
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "./store/store";
+import { RootState, AppDispatch } from "./store/store";
 
 function App() {
 	const tasks = useSelector((state: RootState) => state.tasksReducer);
-	const dispatch = useDispatch();
+	const dispatch = useDispatch<AppDispatch>();
 
 	return (
 		<>
