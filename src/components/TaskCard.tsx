@@ -1,5 +1,5 @@
-import { TaskItemProps } from '../types/Todos';
-import TaskItem from './TaskItem';
+import { TaskItemProps } from "../types/Todos";
+import TaskItem from "./TaskItem";
 
 const TaskCard = ({ tasks, dispatch }: TaskItemProps) => {
 	return (

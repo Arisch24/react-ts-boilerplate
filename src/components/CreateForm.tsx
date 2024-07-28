@@ -1,6 +1,6 @@
 import { FormEvent, useState } from "react";
 import { TaskItemProps } from "../types/Todos";
-import { ACTIONS } from "../utils/defaults";
+import { addTask } from "../store/actions";
 
 const CreateForm = ({ dispatch }: TaskItemProps) => {
 	const [title, setTitle] = useState("");
@@ -10,13 +10,14 @@ const CreateForm = ({ dispatch }: TaskItemProps) => {
 
 		// add todo
 		if (title) {
-			dispatch({ type: ACTIONS.ADD_TASK, payload: { title } });
+			dispatch(addTask(title));
 		}
 	};
 
 	return (
-		<div className="form-wrapper">
-			<h2>Add an Item</h2>
+		<div className="flex flex-col gap-2">
+			<h2 className="text-3xl font-bold">Add an Item</h2>
+			<hr className="bg-slate-300 my-2 w-[25%]" aria-hidden="true" />
 			<form onSubmit={handleSubmit}>
 				<div className="form-group">
 					<label className="form-label" htmlFor="title">
