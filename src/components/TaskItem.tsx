@@ -10,7 +10,7 @@ interface TaskItemProps {
 const TaskItem = ({ task, dispatch }: TaskItemProps) => {
 	const [title, setTitle] = useState<string>(task.title);
 
-	const removeItem = (id: number) => {
+	const removeItem = (id: string | number) => {
 		dispatch({ type: ACTIONS.DELETE_TASK, payload: { id } });
 	};
 
