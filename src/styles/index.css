@@ -1,6 +1,38 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	section {
+		@apply py-16;
+		@apply px-8;
+	}
+
+	.container {
+		@apply mx-auto;
+	}
+	:is(h1, h2, h3, h4, h5, h6) {
+		@apply font-bold;
+	}
+	h1 {
+		@apply text-5xl;
+	}
+	h2 {
+		@apply text-4xl;
+	}
+	h3 {
+		@apply text-3xl;
+	}
+	h4 {
+		@apply text-2xl;
+	}
+	h5 {
+		@apply text-xl;
+	}
+	h6 {
+		@apply text-lg;
+	}
+}
 
 :root {
 	line-height: 1.5;
@@ -29,10 +61,6 @@ a:hover {
 
 body {
 	margin: 0;
-	display: flex;
-	place-items: center;
-	min-width: 320px;
-	min-height: 100vh;
 }
 input:not([type="checkbox"], [type="radio"], [type="submit"]) {
 	padding: 0.75em 0.5em;
